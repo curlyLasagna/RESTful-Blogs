@@ -1,0 +1,11 @@
+<%- include('partials/head') %>
+<div class="ui main text container segment">
+    <div class="ui huge header">New Blog</div>
+    <form action="/blogs" method="POST">
+        <input type="text" placeholder="title" name="blog[title]" id="">
+        <input type="text" placeholder="image" name="blog[image]" id="">
+        <input type="text" placeholder="blog post goes here" name="blog[body]" id="">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<%- include('partials/footer') %>
