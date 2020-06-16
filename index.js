@@ -50,6 +50,21 @@ app.post("/blogs", (req, res)=>{
     })
 })
 
+// Show route
+app.get("/blogs/:id", (req, res)=>{
+	Blog.findById(req.params.id, (err, foundBlog)=>{
+		(err) ?
+		res.redirect("/blogs"):
+		res.render("show", {blog: foundBlog});
+	})
+})
+
+// Edit route
+app.get("/blogs/:id/edit", (req, res)=>{
+	res.render("edit");
+})
+
+// Root route
 app.get("/", (req, res)=>{
     res.redirect("/blogs")
 })
